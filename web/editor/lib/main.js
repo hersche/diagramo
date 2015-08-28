@@ -889,6 +889,52 @@ function onKeyDown(ev){
                     break;                                    
             }
             break;
+            
+            
+        case KEY.BACKSPACE: //Delete
+            //delete any Figure or Group
+            //            alert('Delete pressed' + this);
+            ev.preventDefault();
+            switch(state){
+
+                case STATE_FIGURE_SELECTED: //delete a figure ONLY when the figure is selected
+                    if(selectedFigureId != -1){
+                        var cmdDelFig = new FigureDeleteCommand(selectedFigureId);
+                        cmdDelFig.execute();
+                        History.addUndo(cmdDelFig);
+                    }                    
+                    break;
+                    
+                case STATE_GROUP_SELECTED:
+                    if(selectedGroupId != -1){
+                        var cmdDelGrp = new GroupDeleteCommand(selectedGroupId);
+                        cmdDelGrp.execute();
+                        History.addUndo(cmdDelGrp);
+                    }
+
+                    break;    
+
+                case STATE_CONNECTOR_SELECTED:
+                    Log.group("Delete connector");
+                    if(selectedConnectorId != -1){
+                        var cmdDelCon = new ConnectorDeleteCommand(selectedConnectorId);
+                        cmdDelCon.execute();
+                        History.addUndo(cmdDelCon);                                                
+                    }
+                    Log.groupEnd();
+                    break;
+                    
+                case STATE_CONTAINER_SELECTED:
+                    Log.group("Delete container");
+                    if(selectedContainerId != -1){
+                        var cmdDelContainer = new ContainerDeleteCommand(selectedContainerId);
+                        cmdDelContainer.execute();
+                        History.addUndo(cmdDelContainer);                                                
+                    }
+                    Log.groupEnd();
+                    break;                                    
+            }
+            break;    
 
         case KEY.SHIFT: //Shift
             SHIFT_PRESSED = true;
