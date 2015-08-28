@@ -1,6 +1,31 @@
 <?php
 
 /*
+
+
+THIS IS A OWNCLOUD-FORK!
+
+Install: Search for /owncloud/ and read the commend/customize the paths (linenr 196). Set up a new db (prevents "shared" diagrams),
+use your owncloud-root as diagramo-initial-user.
+
+Done:
+
+- remove email-check since we've plain user-names 
+- integrate login and, if needed, automatic creation of user
+
+Todo:
+
+- templating it right, maybe look for owncloud-cookie instead of the diagramo's
+
+Attention:
+
+- very early, first thing. i'm tired through play around the whole night. it's tested once with a new db and the last change.
+
+credits:
+
+- of course diagramo for main-project
+- Klaus Herberth for the unchanged auth_oc_user.php-script
+
 Copyright [2014] [Diagramo]
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -169,12 +194,58 @@ switch ($action) {
 function loginExe() {
     $email = trim($_REQUEST['email']);
     $password = trim($_REQUEST['password']);
+    // custom the /var/www/diagramo/web/editor/common/auth_oc_user.php and /var/www/owncloud/
+$ret = exec("/var/www/diagramo/web/editor/common/auth_oc_user.php '/var/www/owncloud/' ".$email."  ".$password);
+$d = new Delegate();
+if($ret==1){
+$existingUser = $d->userGetByEmailAndPassword($email,$password);
 
+    if(!is_object($existingUser)){
+
+    $user = new User();
+    $user->email = trim($_REQUEST['email']);
+    $user->password = md5($_REQUEST['password']);
+    $user->createdDate = now();    
+    $user->lastLoginDate = now();
+    $user->lastLoginIp = $_SERVER['REMOTE_ADDR'];
+    $user->lastBrowserType = $_SERVER['HTTP_USER_AGENT'];
+
+    $userId = $d->userCreate($user);
+	}
+    else {
+     $user = $existingUser;
+     $userId = $existingUser->id;
+    }
+            $_SESSION['userId'] = $userId;
+
+        //remember me option
+        if ($_REQUEST['rememberMe'] === 'true') {
+            $userCookie = packer(array('email' => $email, 'password' => md5($password)), PACKER_PACK);
+            setcookie('biscuit', $userCookie, time() + ((60 * 60 * 24) * 5), '/');
+        }
+
+        $user->lastLoginDate = now();
+        $user->lastLoginIp = $_SERVER['REMOTE_ADDR'];
+        $user->lastBrowserType = $_SERVER['HTTP_USER_AGENT'];
+        //$delegate->userUpdate($user);
+
+        if($user->tutorial){
+            redirect("../editor.php?diagramId=quickstart");
+        }
+        else{
+            redirect("../editor.php");
+        }
+
+
+}
+else {
+        addError("Authetication failed");
+        //outer site
+        redirect("../login.php");
+        exit(0);
+    }
 
     // Validate data
-    if (validateString($email, 'Empty email or bad email syntax')) {
-        #print "Wrong email";
-    }
     if (validateString($password, 'Empty password')) {
         #print "Wrong password";
     }
@@ -245,10 +316,6 @@ function forgotPasswordExe() {
 
 
     // Validate data
-    if (!validateString($email, 'Empty email or bad email syntax')) {
-        print "Wrong email: " . $email;
-        exit();
-    }
     
     if($_REQUEST['captcha'] != $_SESSION['captcha']){
         addError("Text was wrong. try again!");        
@@ -301,13 +368,6 @@ function resetPassword() {
 
 
     // Validate data
-    if (validateString($id, 'Wrong i param')) {
-        #print "Wrong email";
-    }
-
-    if (validateString($key, 'Wrong k param')) {
-        #print "Wrong email";
-    }
 
 
     if (errors ()) {
@@ -1181,9 +1241,6 @@ function info() {
 
 
 function registerExe(){
-    if(!validateEmail($_REQUEST['email'])){
-        addError("Email is wrong");
-    }
     
     $d = new Delegate();
     
