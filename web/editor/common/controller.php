@@ -195,11 +195,11 @@ function loginExe() {
     $email = trim($_REQUEST['email']);
     $password = trim($_REQUEST['password']);
     // custom the /var/www/diagramo/web/editor/common/auth_oc_user.php and /var/www/owncloud/
-$ret = exec("/var/www/diagramo/web/editor/common/auth_oc_user.php '/var/www/owncloud/' ".$email."  ".$password);
+$ret = exec("/home/hersche/code/diagramo/web/editor/common/auth_oc_user.php '/home/hersche/code/core/' ".$email."  ".$password);
 $d = new Delegate();
 if($ret==1){
-$existingUser = $d->userGetByEmailAndPassword($email,$password);
-
+ $existingUser = $d->userGetByEmail($email);
+//$existingUser = $d->getSingle('user', array('email'=>$email));
     if(!is_object($existingUser)){
 
     $user = new User();
@@ -215,6 +215,8 @@ $existingUser = $d->userGetByEmailAndPassword($email,$password);
     else {
      $user = $existingUser;
      $userId = $existingUser->id;
+     $user->password = md5($_REQUEST['password']);
+     $userId = $existingUser->id;
     }
             $_SESSION['userId'] = $userId;
 
@@ -227,7 +229,7 @@ $existingUser = $d->userGetByEmailAndPassword($email,$password);
         $user->lastLoginDate = now();
         $user->lastLoginIp = $_SERVER['REMOTE_ADDR'];
         $user->lastBrowserType = $_SERVER['HTTP_USER_AGENT'];
-        //$delegate->userUpdate($user);
+        $d->userUpdate($user);
 
         if($user->tutorial){
             redirect("../editor.php?diagramId=quickstart");
@@ -235,53 +237,11 @@ $existingUser = $d->userGetByEmailAndPassword($email,$password);
         else{
             redirect("../editor.php");
         }
+        exit(0);
 
 
 }
 else {
-        addError("Authetication failed");
-        //outer site
-        redirect("../login.php");
-        exit(0);
-    }
-
-    // Validate data
-    if (validateString($password, 'Empty password')) {
-        #print "Wrong password";
-    }
-
-
-    if (errors ()) {
-        #print "Errors"; exit(0);
-        //outer site
-        redirect("../../index.php");
-        exit(0);
-    }
-
-    $delegate = new Delegate();
-    $user = $delegate->userGetByEmailAndPassword($email, $password);
-    if (is_object($user)) {
-        $_SESSION['userId'] = $user->id;
-
-        //remember me option
-        if ($_REQUEST['rememberMe'] === 'true') {
-            $userCookie = packer(array('email' => $email, 'password' => md5($password)), PACKER_PACK);
-            setcookie('biscuit', $userCookie, time() + ((60 * 60 * 24) * 5), '/');
-        }
-
-        $user->lastLoginDate = now();
-        $user->lastLoginIp = $_SERVER['REMOTE_ADDR'];
-        $user->lastBrowserType = $_SERVER['HTTP_USER_AGENT'];
-        //$delegate->userUpdate($user);
-
-        if($user->tutorial){
-            redirect("../editor.php?diagramId=quickstart");
-        }
-        else{
-            redirect("../editor.php");
-        }
-        exit(0);        
-    } else {
         addError("Authetication failed");
         //outer site
         redirect("../login.php");
