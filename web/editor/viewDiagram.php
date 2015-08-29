@@ -58,7 +58,7 @@ if(!is_object($diagram)){
 }
 
 if(!$diagram->public){
-    print "Diagram is not public. A Diagram must be public to be publicly visible.";
+    print "Diagram ist nicht öffentlich. Ein Diagram muss öffentlich sein, um von dritten angesehen werden zu können.";
     exit();
 }
 //end check
@@ -81,7 +81,7 @@ $WEBADDRESS = $delegate->settingsGetByKeyNative('WEBADDRESS');
         <div id="content" style="margin-left: 30px;">
             <h1><?=$diagram->title?></h1>
             <div><?=$diagram->description?></div>
-            <div>Public </div>
+            <div>Öffentlich </div>
             <p/>
             <div id="container">
                 <img usemap="#linkLayer" src="<?=$WEBADDRESS?>/editor/png.php?diagramId=<?=$diagram->id?>" width="800" height="600" border="0"/>            

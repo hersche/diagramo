@@ -42,7 +42,7 @@ $page = "save";
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Diagramo - Save diagram</title>
+        <title>Diagramo - Diagram speichern</title>
         <meta http-equiv="X-UA-Compatible" content="IE=9" />
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
         <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
@@ -65,7 +65,7 @@ $page = "save";
                 var title = document.getElementById('title');
                 
                 if(trim(title.value).length == 0){
-                    alert('Title can not be empty');
+                    alert('Titel kann nicht leer sein');
                     return false;
                 }
                 else{
@@ -97,7 +97,7 @@ $page = "save";
                         <div style="position: absolute; top: 10px; left: 20px; right: 20px;">
                             <table width="100%" cellpadding="0" cellspacing="0">
                                 <tr>
-                                    <td><span class="formLabel">Title</span></td>
+                                    <td><span class="formLabel">Titel</span></td>
                                     <td width="100%">&nbsp;</td>
                                     <td> <input class="formField" style="margin-right: 0;" type="text" name="title" id="title" size="40"/></td>
                                 </tr>
@@ -105,7 +105,7 @@ $page = "save";
                         </div>
                         
                         <div style="position: absolute; top: 50px; left: 20px;">
-                             <span class="formLabel">Description(optional)</span>
+                             <span class="formLabel">Beschreibung (optional)</span>
                         </div>
 
                         <div style="position: absolute; top: 70px; left: 20px; right: 20px; text-align: right;">
@@ -117,8 +117,7 @@ $page = "save";
                         </div>
 
                         <div style="position: absolute; top: 190px; left: 20px; color: gray; text-align: left;">
-                            A <b>public</b> diagram will have direct links (<a href="http://en.wikipedia.org/wiki/Permalink" target="new">permalinks</a>) to anyone
-                            but only the authors can edit it.
+                        Ein <b>öffentliches</b> diagram hat direkte Links (<a href="http://en.wikipedia.org/wiki/Permalink" target="new">permalinks</a>) für alle, aber nur die Authoren können bearbeiten.
                         </div>
 
                         <div style="position: absolute; top: 240px; left: 20px; right: 20px;">

@@ -74,13 +74,10 @@ $page = "mysqttings";
                                 <td align="right"><span class="formLabel"><?=$loggedUser->name?></span></td>
                             </tr> 
                             <tr>
-                                <td align="left"><span class="formLabel">Current password</span></td>
-                                <td align="right"><input  class="formField" size="40"   type="password" name="currentPassword"/></td>
+                                <td align="left"><span class="formLabel">Passwort</span></td>
+                                <td align="right">Setze dein Passwort bitte in der Cloud</td>
                             </tr>
-                            <tr>
-                                <td align="left"><span class="formLabel">New password</span></td>
-                                <td align="right"><input  class="formField" size="40"   type="password" name="newPassword"/></td>
-                            </tr>
+
                             <tr>
                                 <td colspan="2">
                                     <div style="vertical-align: middle; text-align: right;">

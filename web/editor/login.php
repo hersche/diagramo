@@ -100,7 +100,7 @@ for ($i = 1; $i < count($key); $i++)
 
 <? include "outsideheader.php"; ?>
 
-        <h1>Login</h1>
+        <h1>Owncloud-Login</h1>
 
         <div class="content">
             <?require_once './common/messages.php';?>
@@ -109,13 +109,13 @@ for ($i = 1; $i < count($key); $i++)
                 <input type="hidden" name="action" value="loginExe"/>
                 <table>
                     <tr>
-                        <td>Email:<br /><input tabindex="1" type="text" name="email" value="<?=@$_REQUEST['email']?>" class="myinput" /></td>
+                        <td>Benutzername:<br /><input tabindex="1" type="text" name="email" value="<?=@$_REQUEST['email']?>" class="myinput" /></td>
                     </tr>
                     <tr>
-                        <td><br />Password:<br /><input tabindex="2" type="password" name="password" size="15" class="myinput" value="<?=@$_REQUEST['password']?>" /></td>
+                        <td><br />Passwort:<br /><input tabindex="2" type="password" name="password" size="15" class="myinput" value="<?=@$_REQUEST['password']?>" /></td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" checked name="rememberMe" value="true" /> Stay signed in</td>
+                        <td><input type="checkbox" checked name="rememberMe" value="true" /> Bleibe eingeloggt</td>
                     </tr>
                     <tr>
                         <td valign="middle"><br /><input type="submit" value="Login" class="mysubmit" /></td>
