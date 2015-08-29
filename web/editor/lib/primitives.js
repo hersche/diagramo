@@ -1525,7 +1525,7 @@ CubicCurve.prototype = {
 //        Log.group("CubicCurve:paint() ");
         if(this.style != null){
             this.style.setupContext(context);
-            Log.info("stroke style : " + this.style.strokeStyle);
+            Log.info("Rahmenfarbe : " + this.style.strokeStyle);
         }
         
         context.beginPath();

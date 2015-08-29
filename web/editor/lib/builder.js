@@ -42,7 +42,7 @@ Builder.IMAGE_FILL_ICON_PATH = Builder.IMAGE_BASE_PATH + 'prop-icon-fill.png' ;
 /**Path to stroke icon image*/
 Builder.IMAGE_STROKE_ICON_PATH = Builder.IMAGE_BASE_PATH + 'prop-icon-stroke.png' ;
 
-/**Path to line width icon image*/
+/**Path to Ra-Breite icon image*/
 Builder.IMAGE_LINEWIDTH_ICON_PATH = Builder.IMAGE_BASE_PATH + 'prop-icon-linewidth.png' ;
 
 /**Line (dashed) style icon image*/
@@ -125,7 +125,7 @@ Builder.constructCanvasPropertiesPanel = function(DOMObject, canvasProps){
     //title
     var titleDiv = document.createElement("div");
     titleDiv.className = 'label title';
-    titleDiv.textContent = 'Page Setup';
+    titleDiv.textContent = 'Seiteneinrichtung';
     div.appendChild(titleDiv);
 
     //separator
@@ -141,7 +141,7 @@ Builder.constructCanvasPropertiesPanel = function(DOMObject, canvasProps){
 
     var labelDiv = document.createElement("div");
     labelDiv.className = "label";
-    labelDiv.textContent = "Background";
+    labelDiv.textContent = "Hintergrund";
 
     icon = new Image();
     icon.className = 'prop-icon';
@@ -186,7 +186,7 @@ Builder.constructCanvasPropertiesPanel = function(DOMObject, canvasProps){
     //width
     var divWidth = document.createElement("div");
     divWidth.className = 'label';
-    divWidth.textContent = 'Width';
+    divWidth.textContent = 'Breite';
 
     icon = new Image();
     icon.className = 'prop-icon';
@@ -204,7 +204,7 @@ Builder.constructCanvasPropertiesPanel = function(DOMObject, canvasProps){
     //height
     var divHeight = document.createElement("div");
     divHeight.className = 'label';
-    divHeight.textContent = 'Height';
+    divHeight.textContent = 'Höhe';
 
     icon = new Image();
     icon.className = 'prop-icon';
@@ -225,7 +225,7 @@ Builder.constructCanvasPropertiesPanel = function(DOMObject, canvasProps){
     //update button
     var btnUpdate = document.createElement("input");
     btnUpdate.setAttribute("type", "button");
-    btnUpdate.setAttribute("value", "Update");
+    btnUpdate.setAttribute("value", "Anwenden");
 
     btnUpdate.onclick = function(){
         //update canvas props
@@ -266,7 +266,7 @@ Builder.constructCanvasPropertiesPanel = function(DOMObject, canvasProps){
     //fit button
     var btnFit = document.createElement("input");
     btnFit.setAttribute("type", "button");
-    btnFit.setAttribute("value", "Fit");
+    btnFit.setAttribute("value", "Skalieren");
 
     btnFit.onclick = function(){
         /* Algorithm
@@ -345,10 +345,10 @@ BuilderProperty.TYPE_TEXT_UNDERLINED = 'TextUnderlined';
 /**Boolean property type*/
 BuilderProperty.TYPE_BOOLEAN = 'Boolean';
 
-/**Line width property type*/
+/**Ra-Breite property type*/
 BuilderProperty.TYPE_LINE_WIDTH = 'LineWidth';
 
-/**Line width property style*/
+/**Ra-Breite property style*/
 BuilderProperty.TYPE_LINE_STYLE = 'LineStyle';
 
 /**Image Fill type*/
@@ -368,7 +368,7 @@ BuilderProperty.TYPE_URL= 'URL';
 
 //BuilderProperty.IMAGE_FILL = [{Text: 'No Scaling', Value: CanvasImage.FIXED_NONE},{Text: 'Fit to Area', Value: CanvasImage.FIXED_BOTH},{Text: 'Fit to Width',Value: CanvasImage.FIXED_WIDTH},{Text: 'Fit to Height',Value: CanvasImage.FIXED_HEIGHT},{Text: ' Auto Fit',Value: CanvasImage.FIXED_AUTO}]
 
-/**Line widths*/
+/**Ra-Breites*/
 BuilderProperty.LINE_WIDTHS = [
     {Text: '1px', Value: '1'},{Text: '2px',Value: '2'},{Text: '3px',Value: '3'},
     {Text: '4px',Value: '4'},{Text: '5px',Value: '5'},{Text: '6px',Value: '6'},
@@ -376,11 +376,11 @@ BuilderProperty.LINE_WIDTHS = [
     {Text: '10px',Value: '10'}];
 
 
-/**Line styles*/
+/**Rahmenstils*/
 BuilderProperty.LINE_STYLES = [
-    {Text: 'Continous', Value: 'continuous'},
-    {Text: 'Dotted', Value: 'dotted'},
-    {Text: 'Dashed',Value: 'dashed'}
+    {Text: 'Durchgehend', Value: 'continuous'},
+    {Text: 'Gepunktet', Value: 'dotted'},
+    {Text: 'Stricht',Value: 'dashed'}
 ];
 
 /**Font sizes*/
@@ -391,7 +391,7 @@ for(var i=0; i<73; i++){
 
 /**Connector ends*/
 BuilderProperty.CONNECTOR_ENDS = [{Text:'Normal', Value:'Normal'},{Text:'Arrow', Value:'Arrow'},
-    {Text:'Empty Triangle', Value:'Empty'},{Text:'Filled Triangle', Value:'Filled'}];
+    {Text:'Leeres Dreieck', Value:'Empty'},{Text:'Filled Triangle', Value:'Filled'}];
 
 /**Display separator*/
 BuilderProperty.SEPARATOR = 'SEPARATOR';

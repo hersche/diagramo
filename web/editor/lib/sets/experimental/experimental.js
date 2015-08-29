@@ -44,9 +44,9 @@ function figure_PatternLine(x, y)
     f.style.strokeStyle = FigureDefaults.strokeStyle;
 	f.style.lineWidth = 4;
 	f.style.strokeStyle = '#000000';
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
 
     var p = new DottedPolygon([1,1]);
     p.addPoint(new Point(x, y));
@@ -71,10 +71,10 @@ function figure_NativeDash(x, y)
     f.style.lineWidth = 4;
     f.style.strokeStyle = '#000000';
     f.style.lineStyle = Style.LINE_STYLE_DASHED;
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
-    f.properties.push(new BuilderProperty('Line Style', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+    f.properties.push(new BuilderProperty('Rahmenstil', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
 
     var p = new Polygon([1,1]);
     p.style.lineDash = [4,4];
@@ -95,8 +95,8 @@ function figure_Polyline(x, y)
     var f = new Figure("Polyline");
     f.style.fillStyle = FigureDefaults.fillStyle;
     f.style.strokeStyle = FigureDefaults.strokeStyle;
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
 
     var p = new Polyline();
     p.addPoint(new Point(x, y));
@@ -136,9 +136,9 @@ function figure_Stop(x,y)
     f.properties.push(new BuilderProperty('Text Underlined', 'primitives.1.underlined', BuilderProperty.TYPE_TEXT_UNDERLINED));
     f.properties.push(new BuilderProperty('Text Color', 'primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR));
 //    f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
-    f.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));//f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS));
+    f.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));//f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS));
     f.addPrimitive(r);
 
     var t2 = new Text(FigureDefaults.textStr, x + FigureDefaults.segmentSize/2, y + FigureDefaults.segmentSize/2, FigureDefaults.textFont, FigureDefaults.textSize);
@@ -161,8 +161,8 @@ function figure_SimpleImage(x, y)
     var f = new Figure("FamilyCard");
     f.style.fillStyle = FigureDefaults.fillStyle;
     f.style.strokeStyle = FigureDefaults.strokeStyle;
-//    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-//    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+//    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+//    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     
 
 //    var img = new Image();
@@ -187,8 +187,8 @@ function figure_ImageFrame(x, y)
     var f = new Figure("FamilyCard");
     f.style.fillStyle = FigureDefaults.fillStyle;
     f.style.strokeStyle = FigureDefaults.strokeStyle;
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     
     //frame - 0
     var frame = new Polygon();
@@ -272,8 +272,8 @@ function figure_Settings(x, y)
     var f = new Figure("Settings");
     f.style.fillStyle = FigureDefaults.fillStyle;
     f.style.strokeStyle = FigureDefaults.strokeStyle;
-//    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-//    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+//    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+//    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     
 
 //    var img = new Image();
@@ -299,8 +299,8 @@ function figure_Tango(x, y)
     var f = new Figure("Tango");
     f.style.fillStyle = FigureDefaults.fillStyle;
     f.style.strokeStyle = FigureDefaults.strokeStyle;
-//    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-//    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+//    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+//    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     
 
 //    var img = new Image();
@@ -326,8 +326,8 @@ function figure_Organic(x, y)
     var f = new Figure("Organic");
     f.style.fillStyle = FigureDefaults.fillStyle;
     f.style.strokeStyle = FigureDefaults.strokeStyle;
-//    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-//    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+//    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+//    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     
 
 //    var img = new Image();
@@ -353,8 +353,8 @@ function figure_Inkscape(x, y)
     var f = new Figure("Inkscape");
     f.style.fillStyle = FigureDefaults.fillStyle;
     f.style.strokeStyle = FigureDefaults.strokeStyle;
-//    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-//    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+//    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+//    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     
 
 //    var img = new Image();
@@ -378,8 +378,8 @@ function figure_Airport(x, y)
     var f = new Figure("Inkscape");
     f.style.fillStyle = FigureDefaults.fillStyle;
     f.style.strokeStyle = FigureDefaults.strokeStyle;
-//    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-//    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+//    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+//    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     
 
 //    var img = new Image();
@@ -404,8 +404,8 @@ function figure_200by200SVG(x, y)
     var f = new Figure("200by200SVG");
     f.style.fillStyle = FigureDefaults.fillStyle;
     f.style.strokeStyle = FigureDefaults.strokeStyle;
-//    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-//    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+//    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+//    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     
 
 //    var img = new Image();
@@ -430,8 +430,8 @@ function figure_200by200PNG(x, y)
     var f = new Figure("200by200PNG");
     f.style.fillStyle = FigureDefaults.fillStyle;
     f.style.strokeStyle = FigureDefaults.strokeStyle;
-//    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-//    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+//    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+//    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     
 
 //    var img = new Image();
@@ -459,8 +459,8 @@ function figure_3Figures(x, y)
     var f = new Figure("3FiguresSVG");
     f.style.fillStyle = FigureDefaults.fillStyle;
     f.style.strokeStyle = FigureDefaults.strokeStyle;
-//    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-//    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+//    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+//    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     
 
 //    var img = new Image();
@@ -484,8 +484,8 @@ function figure_3FiguresNoSize(x, y)
     var f = new Figure("3FiguresSVG");
     f.style.fillStyle = FigureDefaults.fillStyle;
     f.style.strokeStyle = FigureDefaults.strokeStyle;
-//    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-//    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+//    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+//    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     
 
 //    var img = new Image();

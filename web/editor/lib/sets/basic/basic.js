@@ -94,10 +94,10 @@ function figure_Rectangle(x, y)
     f.properties.push(new BuilderProperty('Text Color', 'primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR));
 
 //    f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
-    f.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
-    f.properties.push(new BuilderProperty('Line Style', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
+    f.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+    f.properties.push(new BuilderProperty('Rahmenstil', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
     
     f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
     f.properties.push(new BuilderProperty('URL', 'url', BuilderProperty.TYPE_URL));
@@ -120,7 +120,7 @@ function figure_Rectangle(x, y)
 
     f.addPrimitive(t2);
 
-    //test line style
+    //test Rahmenstil
 //    f.addPrimitive(new Line(new Point(10, 10), new Point(300, 300)));
     //end test
 
@@ -173,10 +173,10 @@ function figure_Square(x,y)
 
 
 //    f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
-    f.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));//f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS));
-    f.properties.push(new BuilderProperty('Line Style', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
+    f.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));//f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS));
+    f.properties.push(new BuilderProperty('Rahmenstil', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
     
     f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
     f.properties.push(new BuilderProperty('URL', 'url', BuilderProperty.TYPE_URL));
@@ -223,10 +223,10 @@ function figure_Circle(x,y)
     f.properties.push(new BuilderProperty('Text Color', 'primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR));
 
 //    f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
-    f.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));//f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS);
-    f.properties.push(new BuilderProperty('Line Style', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
+    f.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));//f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS);
+    f.properties.push(new BuilderProperty('Rahmenstil', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
     
     f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
     f.properties.push(new BuilderProperty('URL', 'url', BuilderProperty.TYPE_URL));
@@ -268,11 +268,11 @@ function figure_Diamond(x,y)
     f.properties.push(new BuilderProperty('Text Color', 'primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR));
 
 //    f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
-    f.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH))
+    f.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH))
     //f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS);
-    f.properties.push(new BuilderProperty('Line Style', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
+    f.properties.push(new BuilderProperty('Rahmenstil', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
     
     f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
     f.properties.push(new BuilderProperty('URL', 'url', BuilderProperty.TYPE_URL));
@@ -309,11 +309,11 @@ function figure_Parallelogram(x,y)
 
 
 //    f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
-    f.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+    f.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     //f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS);
-    f.properties.push(new BuilderProperty('Line Style', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
+    f.properties.push(new BuilderProperty('Rahmenstil', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
     
     f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
     f.properties.push(new BuilderProperty('URL', 'url', BuilderProperty.TYPE_URL));
@@ -360,11 +360,11 @@ function figure_Ellipse(x,y)
     f.properties.push(new BuilderProperty('Text Color', 'primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR));
 
 //    f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
-    f.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+    f.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     //f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS);
-    f.properties.push(new BuilderProperty('Line Style', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
+    f.properties.push(new BuilderProperty('Rahmenstil', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
     
     f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
     f.properties.push(new BuilderProperty('URL', 'url', BuilderProperty.TYPE_URL));
@@ -406,10 +406,10 @@ function figure_RightTriangle(x,y)
     e.properties.push(new BuilderProperty('Text Color', 'primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR));
 
 //    e.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
-    e.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    e.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    e.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));//f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS);
-    e.properties.push(new BuilderProperty('Line Style', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
+    e.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    e.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    e.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));//f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS);
+    e.properties.push(new BuilderProperty('Rahmenstil', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
     
     e.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
     e.properties.push(new BuilderProperty('URL', 'url', BuilderProperty.TYPE_URL));
@@ -454,11 +454,11 @@ function figure_Pentagon(x,y)
     f.properties.push(new BuilderProperty('Text Color', 'primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR));
 
 //    f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
-    f.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+    f.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     //f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS);
-    f.properties.push(new BuilderProperty('Line Style', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
+    f.properties.push(new BuilderProperty('Rahmenstil', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
     
     f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
     f.properties.push(new BuilderProperty('URL', 'url', BuilderProperty.TYPE_URL));
@@ -506,11 +506,11 @@ function figure_Hexagon(x,y)
     f.properties.push(new BuilderProperty('Text Color', 'primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR));
 
 //    f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
-    f.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+    f.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     //f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS);
-    f.properties.push(new BuilderProperty('Line Style', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
+    f.properties.push(new BuilderProperty('Rahmenstil', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
     
     f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
     f.properties.push(new BuilderProperty('URL', 'url', BuilderProperty.TYPE_URL));
@@ -560,11 +560,11 @@ function figure_Octogon(x,y)
     f.properties.push(new BuilderProperty('Text Color', 'primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR));
 
 //    f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
-    f.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+    f.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
     //f.properties.push(new BuilderProperty('Vertical Alignment ', 'primitives.1.valign', Text.VALIGNMENTS);
-    f.properties.push(new BuilderProperty('Line Style', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
+    f.properties.push(new BuilderProperty('Rahmenstil', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
     
     f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
     f.properties.push(new BuilderProperty('URL', 'url', BuilderProperty.TYPE_URL));
@@ -647,10 +647,10 @@ function figure_RoundedRectangle(x,y)
     f.properties.push(new BuilderProperty('Text Color', 'primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR));
 
 //    f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
-    f.properties.push(new BuilderProperty('Stroke Style', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Fill Style', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
-    f.properties.push(new BuilderProperty('Line Width', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
-    f.properties.push(new BuilderProperty('Line Style', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
+    f.properties.push(new BuilderProperty('Rahmenfarbe', 'style.strokeStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Hintergrundfarbe', 'style.fillStyle', BuilderProperty.TYPE_COLOR));
+    f.properties.push(new BuilderProperty('Ra-Breite', 'style.lineWidth',BuilderProperty.TYPE_LINE_WIDTH));
+    f.properties.push(new BuilderProperty('Rahmenstil', 'style.lineStyle',BuilderProperty.TYPE_LINE_STYLE));
 
     f.properties.push(new BuilderProperty(BuilderProperty.SEPARATOR));
     f.properties.push(new BuilderProperty('URL', 'url', BuilderProperty.TYPE_URL));

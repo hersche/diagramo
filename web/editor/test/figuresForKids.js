@@ -9,9 +9,9 @@ function buildText(){
 
     var e = new Figure("Triangle");
     e.style.strokeStyle="#000000";
-    e.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    e.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
     e.builder.addProperty('Text','primitives.0.str', BuilderProperty.TYPE_TEXT);
-    e.builder.addProperty('Text Size ','primitives.0.size', BuilderProperty.FONT_SIZES);
+    e.builder.addProperty('Textgrösse ','primitives.0.size', BuilderProperty.FONT_SIZES);
     
     var t = new Text("Left Sticky\nAnother Line\n It rains cats and dogs",x+20,y+15, 'Arial',12);
 
@@ -30,14 +30,14 @@ function buildFigure1(){
     t.addPoint(new Point(x+0, y+30));
     var e=new Figure("Triangle");
     e.style.strokeStyle="#000000";
-    e.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    e.builder.addProperty('Fill Style','style.fillStyle', BuilderProperty.TYPE_COLOR);
-    e.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    e.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    e.builder.addProperty('Hintergrundfarbe','style.fillStyle', BuilderProperty.TYPE_COLOR);
+    e.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
 
     e.builder.addProperty('Text','primitives.1.str', BuilderProperty.TYPE_TEXT);
-    e.builder.addProperty('Text Size ','primitives.1.size', BuilderProperty.FONT_SIZES);
+    e.builder.addProperty('Textgrösse ','primitives.1.size', BuilderProperty.FONT_SIZES);
     
-    e.builder.addProperty('Text Color','primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    e.builder.addProperty('Textfarbe','primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR);
 
     /*
     e.builder.addProperty('H-Align','primitives.1.HAlign', [{Text: 'Left',Value: 'Left'},{Text: 'Center',Value: 'Center'},{Text: 'Right',Value: 'Right'}]);
@@ -79,9 +79,9 @@ function buildFigure2(){
     f.style.fillStyle= "#ffffff";
     f.style.strokeStyle= "#000000";
     
-    f.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style','style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe','style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     f.addPrimitive(r);
 
     var t2 = new Text("Halunelu",x+25,y+25,'Arial', 18);
@@ -132,9 +132,9 @@ function buildFigure3(){
     p.addPrimitive(l);
     p.addPrimitive(r);
     var f=new Figure("Rectangle");
-    f.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style','style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe','style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     f.style.strokeStyle="black";
     f.addPrimitive(p);
 
@@ -157,9 +157,9 @@ function buildFigure4(){
     x=50;
     y=50;
     var f=new Figure();
-    f.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style','style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe','style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     pline=new Polyline();
     pline.addPoint(new Point(x,y));
     pline.addPoint(new Point(x+50,y));
@@ -181,9 +181,9 @@ function buildFigure5(){
     x=50;
     y=50;
     var f=new Figure();
-    f.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style','style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe','style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     var curve=new QuadCurve(new Point(x,y),new Point(x-25,y-40),new Point(x+50,y-50));
     f.addPrimitive(curve);
     f.style.strokeStyle="black";
@@ -200,9 +200,9 @@ function buildFigure6(){
     x=50;
     y=50;
     var f=new Figure();
-    f.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style','style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe','style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     f.style.strokeStyle="black";
 
     var l=new Polyline();
@@ -227,9 +227,9 @@ function buildFigure7(){
     x=50;
     y=50;
     var figure=new Figure();
-    figure.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    figure.builder.addProperty('Fill Style','style.fillStyle', BuilderProperty.TYPE_COLOR);
-    figure.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    figure.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    figure.builder.addProperty('Hintergrundfarbe','style.fillStyle', BuilderProperty.TYPE_COLOR);
+    figure.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     /*
     figure.builder.addProperty('Text','primitives.1.str', BuilderProperty.TYPE_TEXT);
     figure.builder.addProperty('Text Color','primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR);
@@ -320,8 +320,8 @@ function buildFigure9(){
     s.strokeStyle="#800080";
 
     var f=new Figure();
-    f.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     f.style=s;
     var pl=new Polyline();
     pl.style=null;
@@ -353,8 +353,8 @@ function buildFigure10(){
     var s=new Style();
     s.strokeStyle="#00ff00";
     var f=new Figure();
-    f.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     f.builder.addProperty('Text','primitives.2.str', BuilderProperty.TYPE_TEXT);
     f.builder.addProperty('Text Color','primitives.2.style.fillStyle', BuilderProperty.TYPE_COLOR);
     f.builder.addProperty('Text Size ','primitives.2.size', BuilderProperty.FONT_SIZES);
@@ -386,8 +386,8 @@ function buildFigure11(){
     x=0;
     y=0;
     var f=new Figure();
-    f.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     f.builder.addProperty('Gradient','primitives.0.style.Gradient',[{Text:"Red/Green", Value:"#ff0000/#00ff00"},{Text:"Blue/Green", Value:"#0000ff/#00ff00"},{Text:"Red/Blue", Value:"#ff0000/#0000ff"}]);
     
     f.builder.addProperty('Text','primitives.1.str', BuilderProperty.TYPE_TEXT);
@@ -429,8 +429,8 @@ function buildFigure12(){
     x=100;
     y=100;
     var f=new Figure();
-    f.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     var e=new Ellipse(new Point(x,y),100,50);
     e.style.strokeStyle="black";
     f.addPrimitive(e);
@@ -450,8 +450,8 @@ function buildFigure13(){
     x=100;
     y=100;
     var f=new Figure();
-    f.builder.addProperty('Stroke Style','primitives.0.style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Rahmenfarbe','primitives.0.style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     var e=new Ellipse(new Point(x,y),100,50);
     f.style.image=new Image();
     f.style.image.src="Chrysanthemum.jpg";
@@ -474,10 +474,10 @@ function buildFigure14(){
     x=100;
     y=100;
     var f=new Figure();
-    f.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style','style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
-    f.builder.addProperty('Close Style','primitives.0.styleFlag',[{Text:'None',Value:'0'},{Text:'Sector',Value:'1'},{Text:'Pie',Value:'2'}])
+    f.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe','style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Schliess-Style','primitives.0.styleFlag',[{Text:'None',Value:'0'},{Text:'Sector',Value:'1'},{Text:'Pie',Value:'2'}])
     var a=new Arc(x,y,30,210,270,false,2);
     a.style.fillStyle="#ebf213"
     a.style.strokeStyle="#000000";
@@ -493,9 +493,9 @@ function buildFigure15(){
     x=50;
     y=50;
     var f=new Figure();
-    f.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style','style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe','style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     f.builder.addProperty('Close Style','primitives.0.styleFlag',[{Text:'None',Value:'0'},{Text:'Sector',Value:'1'},{Text:'Pie',Value:'2'}])
     var a=new Arc(x,y,30,270,360,false,0);
     a.style.strokeStyle="#000000";
@@ -513,9 +513,9 @@ function buildFigure16(){
     x=50;
     y=50;
     var f=new Figure();
-    f.builder.addProperty('Fill Style1','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style2','primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style3','primitives.2.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe1','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe2','primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe3','primitives.2.style.fillStyle', BuilderProperty.TYPE_COLOR);
     var r = new Polygon();
     r.addPoint(new Point(x,y));
     r.addPoint(new Point(x+50,y));
@@ -558,8 +558,8 @@ function buildFigure17(){
     x=100;
     y=150;
     var f=new Figure();
-    f.builder.addProperty('Fill Style1',['primitives.0.style.fillStyle','primitives.1.style.fillStyle','primitives.2.style.fillStyle','primitives.3.style.fillStyle'], BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style2','primitives.4.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe1',['primitives.0.style.fillStyle','primitives.1.style.fillStyle','primitives.2.style.fillStyle','primitives.3.style.fillStyle'], BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe2','primitives.4.style.fillStyle', BuilderProperty.TYPE_COLOR);
     var e=new Ellipse(new Point(x,y),60,15);
     e.style.fillStyle="#0000ff"
     var e1=new Ellipse(new Point(x+80,y-80),15,60);
@@ -584,9 +584,9 @@ function buildFigure18(){
     x=50;
     y=50;
     var f=new Figure();
-    f.builder.addProperty('Fill Style1','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style2','primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style3','primitives.2.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe1','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe2','primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe3','primitives.2.style.fillStyle', BuilderProperty.TYPE_COLOR);
     var a=new Arc(x+20,y-25,20,0,360,false,0);
     a.style.fillStyle="#ff0000";
     f.addPrimitive(a);
@@ -610,10 +610,10 @@ function buildFigure19(){
     x=50;
     y=50;
     var f=new Figure();
-    f.builder.addProperty('Fill Style','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Stroke Style1','primitives.0.primitives.0.style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Stroke Style2','primitives.0.primitives.1.style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','primitives.0.style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Hintergrundfarbe','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Rahmenfarbe1','primitives.0.primitives.0.style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Rahmenfarbe2','primitives.0.primitives.1.style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','primitives.0.style.lineWidth',BuilderProperty.LINE_WIDTHS);
     var p1=new Path();
     p1.style.fillStyle="#0000ff"
     p1.style.lineWidth=4;
@@ -639,10 +639,10 @@ function buildFigure20(){
     x=200;
     y=200;
     var f=new Figure();
-    f.builder.addProperty('Fill Style1','primitives.0.arc.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style2','primitives.1.arc.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Stroke Style1','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Hintergrundfarbe1','primitives.0.arc.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe2','primitives.1.arc.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Rahmenfarbe1','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     f.style.strokeStyle="#ff0000"
     f.style.lineCap="round";
     f.style.lineWidth=8;
@@ -662,11 +662,11 @@ function buildFigure21(){
     x=50
     y=50
     var f=new Figure();
-    f.builder.addProperty('Fill Style1','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style2','primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Stroke Style1','primitives.0.style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Stroke Style2','primitives.1.style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Hintergrundfarbe1','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe2','primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Rahmenfarbe1','primitives.0.style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Rahmenfarbe2','primitives.1.style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     
     f.builder.addProperty('Text','primitives.2.str', BuilderProperty.TYPE_TEXT);
     f.builder.addProperty('Text Color','primitives.2.style.fillStyle', BuilderProperty.TYPE_COLOR);
@@ -701,9 +701,9 @@ function buildFigure22(){
     x=50;
     y=50;
     var f=new Figure();
-    f.builder.addProperty('Fill Style','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Hintergrundfarbe','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     f.style.strokeStyle="#000000";
     f.style.lineWidth=4;
     var p=new Path();
@@ -727,11 +727,11 @@ function buildFigure23(){
     x=50;
     y=50;
     var f=new Figure();
-    f.builder.addProperty('Fill Style1','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style2','primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Fill Style3','primitives.2.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Stroke Style','style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Hintergrundfarbe1','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe2','primitives.1.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Hintergrundfarbe3','primitives.2.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Rahmenfarbe','style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','style.lineWidth',BuilderProperty.LINE_WIDTHS);
     f.style.lineWidth=4;
     f.style.strokeStyle="#000000";
     
@@ -767,9 +767,9 @@ function buildFigure24(){
     x=50;
     y=50;
     var f=new Figure();
-    f.builder.addProperty('Fill Style3','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Stroke Style','primitives.0.style.strokeStyle', BuilderProperty.TYPE_COLOR);
-    f.builder.addProperty('Line Width','primitives.0.style.lineWidth',BuilderProperty.LINE_WIDTHS);
+    f.builder.addProperty('Hintergrundfarbe3','primitives.0.style.fillStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Rahmenfarbe','primitives.0.style.strokeStyle', BuilderProperty.TYPE_COLOR);
+    f.builder.addProperty('Ra-Breite','primitives.0.style.lineWidth',BuilderProperty.LINE_WIDTHS);
     var p=new Path();
     p.style.fillStyle="#ff0000";
     p.style.lineWidth=4;
