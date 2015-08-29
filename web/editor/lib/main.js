@@ -894,7 +894,10 @@ function onKeyDown(ev){
         case KEY.BACKSPACE: //Delete
             //delete any Figure or Group
             //            alert('Delete pressed' + this);
-            ev.preventDefault();
+            var url = window.location.pathname;
+            if(url.substring(url.lastIndexOf('/')+1)==="editor.php"){
+                ev.preventDefault();
+            
             switch(state){
 
                 case STATE_FIGURE_SELECTED: //delete a figure ONLY when the figure is selected
@@ -933,7 +936,7 @@ function onKeyDown(ev){
                     }
                     Log.groupEnd();
                     break;                                    
-            }
+            } }
             break;    
 
         case KEY.SHIFT: //Shift
