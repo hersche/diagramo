@@ -28,7 +28,7 @@ if (!isset($_SESSION)) {
 require_once dirname(__FILE__) . '/common/rememberme.php';
 
 if (!isset($_SESSION['userId']) || !is_numeric($_SESSION['userId'])) {
-    addError("Access denied");
+    addError("Zugriff verweigert");
     redirect('./editor.php');
 }
 
@@ -89,7 +89,7 @@ function firstName($email){
                 <div class="formTitle" >
                     <table width="100%" border="0" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td width="200"><span class="formLabel" style="font-size: 14px; font-family: Arial; color: #6E6E6E;">My diagrams</span></td>
+                            <td width="200"><span class="formLabel" style="font-size: 14px; font-family: Arial; color: #6E6E6E;">Meine Diagramme</span></td>
                             <td>&nbsp;</td>
                             <td width="200" align="right"><a style="text-decoration: none;" href="./common/controller.php?action=newDiagramExe"><img style="vertical-align:middle; margin-right: 3px; margin-top: -5px;" src="./assets/images/newdiagram.png" border="0" width="91" height="27"/></a></td>
                         </tr>
@@ -99,14 +99,14 @@ function firstName($email){
                 <table style="position:relative; /*background-color:#F6F6F6;*/ top: 0px; width: 596px; border: 1px solid gray;"  border="0" align="center" cellpadding="5" cellspacing="0" width="100%">
                     <!--Columns-->
                     <tr style="background-color:#EBEBEB;" >
-                        <td align="center" ><span class="formLabel">Thumb</span></td>
+                        <td align="center" ><span class="formLabel">Vorschau</span></td>
                         <td align="left" ><span class="formLabel">Name</span></td>
-                        <td align="left" ><span class="formLabel">View</span></td>
+                        <td align="left" ><span class="formLabel">Bild</span></td>
                         <td align="left" ><span class="formLabel">Export / Download</span></td>
-                        <td align="left" ><span class="formLabel">Last Edit</span></td>                        
-                        <td><span class="formLabel">Public</span></td>
-                        <td><span class="formLabel">Settings</span></td>
-                        <td><span class="formLabel">Delete</span></td>
+                        <td align="left" ><span class="formLabel">Letzte bearbeitung</span></td>                        
+                        <td><span class="formLabel">Sichtbarkeit</span></td>
+                        <td><span class="formLabel">Einstellungen</span></td>
+                        <td><span class="formLabel">Löschen</span></td>
                     </tr>     
                     
                     <!--Data-->
@@ -125,19 +125,19 @@ function firstName($email){
                             <td style="border-bottom: 1px solid white;" align="left" ><a href="./editor.php?diagramId=<?=$myDiagram->id ?>"><span class="formLabel"><?=$myDiagram->title ?></span></a></td>
                             <td align="center">
                                 <a href="./viewDiagram.php?diagramId=<?=$myDiagram->id ?>">
-                                    as PNG
+                                    als PNG
                                 </a>
                             </td>
                             <td align="center">
                                 <a href="./dmo.php?diagramId=<?=$myDiagram->id ?>">
-                                    export
+                                    als dmo
                                 </a>
                             </td>
                             
                             <td style="border-bottom: 1px solid white;" align="left" ><span class="formLabel"><?=strtolower(date('F', strtotime($myDiagram->lastUpdate))) . date(',d Y', strtotime($myDiagram->lastUpdate)) ?></span></td>                            
                             <td style="border-bottom: 1px solid white;" align="center" ><span class="formLabel"><?=$myDiagram->public ? 'public' : 'private' ?></span></td>
                             <td style="border-bottom: 1px solid white;" align="center"><a href="./editDiagram.php?diagramId=<?=$myDiagram->id ?>"><img style="vertical-align:middle; margin-right: 3px;" src="./assets/images/editdiagram.png" border="0" width="22" height="22"/></a></td>
-                            <td style="border-bottom: 1px solid white;" align="center" ><a onclick="javascript: return confirmation('Do you really want to delete diagram?');" href="./common/controller.php?diagramId=<?=$myDiagram->id ?>&action=deleteDiagramExe"><img style="vertical-align:middle; margin-right: 3px;" src="./assets/images/deletediagram.png" border="0" width="22" height="22"/></a></td>
+                            <td style="border-bottom: 1px solid white;" align="center" ><a onclick="javascript: return confirmation('Wollen Sie das Diagramm wirklich löschen?');" href="./common/controller.php?diagramId=<?=$myDiagram->id ?>&action=deleteDiagramExe"><img style="vertical-align:middle; margin-right: 3px;" src="./assets/images/deletediagram.png" border="0" width="22" height="22"/></a></td>
                         </tr>
                     
                         <tr>
