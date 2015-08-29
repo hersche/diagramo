@@ -573,6 +573,11 @@ class Delegate extends SQLite3 {
         return $this->getSingle('user', array('email'=>$email, 'password'=>md5($password) ));
     }
     
+    public function userGetByEmail($email) {
+        (DEBUG) ? $_SESSION['logs'][] = __CLASS__ .'{#}'. __FUNCTION__ ."{#}{#}". __LINE__ : '';
+        return $this->getSingle('user', array('email'=>$email ));
+    }
+    
     public function userGetByEmailAndCryptedPassword($email,$cryptedPassword) {
         (DEBUG) ? $_SESSION['logs'][] = __CLASS__ .'{#}'. __FUNCTION__ ."{#}{#}". __LINE__ : '';
         return $this->getSingle('user', array('email'=>$email, 'password'=>$cryptedPassword ));
