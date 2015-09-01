@@ -204,7 +204,10 @@ window.onbeforeunload=goodbye;
                 <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16"/>
                 <a style="text-decoration: none;" href="#" onclick="return print_diagram();" title="Drucke diagram"><img src="assets/images/icon_print.png" border="0" width="16" height="16"/></a>
             <?}?>
-
+            <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16"/>
+                        <a style="text-decoration: none;" href="javascript:zoomIn();"  title="Save diagram (Ctrl-S)"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/zoomIn.png" border="0" width="22" height="22"/></a>
+                           <a style="text-decoration: none;" href="javascript:zoomReset();"  title="Save diagram (Ctrl-S)"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/zoomReset.png" border="0" width="22" height="22"/></a>             
+                <a style="text-decoration: none;" href="javascript:zoomOut();"  title="Save diagram (Ctrl-S)"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/zoomOut.png" border="0" width="22" height="22"/></a>
             <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16"/>
             
             <a href="javascript:action('connector-straight');"  title="Gerade Verbindung"><img src="assets/images/icon_connector_straight.gif" border="0"/></a>

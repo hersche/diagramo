@@ -94,9 +94,7 @@ $WEBADDRESS = $delegate->settingsGetByKeyNative('WEBADDRESS');
         
         <!--Direct link-->
         <?if($page=='editor'){?>
-                        <a style="text-decoration: none;" href="javascript:zoomIn();"  title="Save diagram (Ctrl-S)"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/zoomIn.png" border="0" width="22" height="22"/><span class="menuText">Zoom in</span></a>
-                           <a style="text-decoration: none;" href="javascript:zoomReset();"  title="Save diagram (Ctrl-S)"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/zoomReset.png" border="0" width="22" height="22"/><span class="menuText">Zoom reset</span></a>             
-                <a style="text-decoration: none;" href="javascript:zoomOut();"  title="Save diagram (Ctrl-S)"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/zoomOut.png" border="0" width="22" height="22"/><span class="menuText">Zoom out</span></a>
+
             <?if($loggedUser->tutorial && isset($_REQUEST['diagramId']) && $_REQUEST['diagramId'] == 'quickstart'){?>                
                 <a style="padding: 6px; display: table-cell; color: #EF6329; background-color: #0288AE;" href="./common/controller.php?action=closeQuickStart">Schliesse Einführung</a>
             <?}?>
