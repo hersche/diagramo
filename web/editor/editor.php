@@ -411,7 +411,7 @@ window.onbeforeunload=goodbye;
             <!--THE canvas-->
             <div style="width: 100%">
                 <div  id="container">
-                    <canvas id="a" width="800" height="600">
+                    <canvas id="a" style="transform: scale(1);" width="800" height="600">
                         Your browser does not support HTML5. Please upgrade your browser to any modern version.
                     </canvas>
                     <div id="text-editor"></div>

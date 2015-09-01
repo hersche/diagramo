@@ -45,8 +45,70 @@ var DIAGRAMO = {
     /**On canvas fit action this will be the distance between canvas work area and it's border*/
     CANVAS_FIT_PADDING : 10
 };
+var zoom = 1;
+function zoomIn(){
+    if(zoom<0.9){
+        zoom = zoom + 0.1;
+    }
+    var canvas = document.getElementById('a');
+    canvas.style='transform: scale('+zoom+');';
+var content = document.getElementById('content');
+    // content.style='width: '+canvas.width*zoom+'; height: '+canvas.height*zoom+';';
+    var context = canvas.getContext("2d");
+    var oldImageData=context.getImageData(0,0,canvas.height,canvas.width);
+    context.clearRect(0, 0, canvas.width*zoom, canvas.height*zoom);
+    context.save();
+        context.width=canvas.width*zoom;
+    context.height=canvas.height*zoom;
+    context.scale(zoom, zoom);
+    context.putImageData(oldImageData,0,0);
+    context.restore();
 
+    minimap.updateMinimap();
+    console.log('scale('+zoom+');');
+}
 
+function zoomOut(){
+    if(zoom>0.1){
+    zoom = zoom - 0.1;
+    }
+var canvas = document.getElementById('a');
+        var context = canvas.getContext("2d");
+    var oldImageData=context.getImageData(0,0,canvas.height,canvas.width);
+    context.clearRect(0, 0, canvas.width*zoom, canvas.height*zoom);
+    context.save();
+        context.width=canvas.width*zoom;
+    context.height=canvas.height*zoom;
+    context.scale(zoom, zoom);
+    context.putImageData(oldImageData,0,0);
+    context.restore();
+    /*
+   var content = document.getElementById('container'); 
+    content.width=content.width*zoom;
+    content.height=content.height*zoom;
+    */
+    canvas.style='transform: scale('+zoom+');';
+    minimap.updateMinimap();
+    console.log('scale('+zoom+');');
+    
+}
+function zoomReset(){
+    zoom = 1;
+var canvas = document.getElementById('a');
+    var context = canvas.getContext("2d");
+    var oldImageData=context.getImageData(0,0,canvas.height,canvas.width);
+    context.clearRect(0, 0, canvas.width*zoom, canvas.height*zoom);
+    context.width=canvas.width*zoom;
+    context.height=canvas.height*zoom;
+    context.save();
+    context.scale(zoom, zoom);
+    context.putImageData(oldImageData,0,0);
+    context.restore();
+    canvas.style='transform: scale('+zoom+');';
+    minimap.updateMinimap();
+    console.log('scale('+zoom+');');
+    
+}
 /**Switch on/off debug
  * @param {Boolean} value optional value
  * */
@@ -3267,7 +3329,11 @@ function getCanvasXY(ev){
         && canvasBounds[1] <= tempPageY && tempPageY <= canvasBounds[3])
     {
 //        Log.info('Inside canvas');
-        position = [tempPageX - $("#a").offset().left, tempPageY - $("#a").offset().top];
+        if(zoom<=1){
+            position = [(tempPageX - $("#a").offset().left)/zoom, (tempPageY - $("#a").offset().top)/zoom];
+        } else {
+           position = [(tempPageX - $("#a").offset().left*zoom), (tempPageY - $("#a").offset().top*zoom)]; 
+        }
         //alert("getXT : " + position);
     }
 //    Log.groupEnd();
@@ -3504,10 +3570,10 @@ function save(){
             }
             else if(data === 'saved'){
                 //Log.info('saved!');
-                alert('saved!');
+                alert('Gespeichert');
             }
             else{
-                alert('Unknown: ' + data );
+                alert('Unbekannter Fehler beim speichern: ' + data );
             }
         }
     );

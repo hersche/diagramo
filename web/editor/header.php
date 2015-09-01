@@ -32,7 +32,17 @@ $WEBADDRESS = $delegate->settingsGetByKeyNative('WEBADDRESS');
             <div class="dropdown_menu_panel" id="file" onmouseover="dropdownSpace.menuCancelCloseTime()" onmouseout="dropdownSpace.menuCloseTime()">
                 <a style="text-decoration: none;" href="./common/controller.php?action=newDiagramExe" title="New diagram"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/icon_new.jpg" border="0" width="20" height="21"/><span class="menuText">Neu</span></a>
                 <a style="text-decoration: none; border-bottom: 1px solid #666;" href="./myDiagrams.php" title="Open diagram"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/icon_open.jpg" border="0" width="20" height="21"/><span class="menuText">Öffnen...</span></a>
+                
+
+                
                 <?if($page=='editor'){?>
+                
+
+                
+                
+                
+                
+                
                     <a style="text-decoration: none;" href="javascript:save();"  title="Save diagram (Ctrl-S)"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/icon_save.jpg" border="0" width="22" height="22"/><span class="menuText">Speichern</span></a>
                     <a style="text-decoration: none; border-bottom: 1px solid #666;" href="javascript:saveAs();"  title="Save diagram as..."><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/icon_save_as.jpg" border="0" width="22" height="22"/><span class="menuText">Speichern als...</span></a>
                     <a style="text-decoration: none; border-bottom: 1px solid #666;" href="javascript:void(0)" onclick="showImport();"  title="Import diagram"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/icon_import.gif" border="0" width="25" height="21"/><span class="menuText">Importieren</span></a>
@@ -84,6 +94,9 @@ $WEBADDRESS = $delegate->settingsGetByKeyNative('WEBADDRESS');
         
         <!--Direct link-->
         <?if($page=='editor'){?>
+                        <a style="text-decoration: none;" href="javascript:zoomIn();"  title="Save diagram (Ctrl-S)"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/zoomIn.png" border="0" width="22" height="22"/><span class="menuText">Zoom in</span></a>
+                           <a style="text-decoration: none;" href="javascript:zoomReset();"  title="Save diagram (Ctrl-S)"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/zoomReset.png" border="0" width="22" height="22"/><span class="menuText">Zoom reset</span></a>             
+                <a style="text-decoration: none;" href="javascript:zoomOut();"  title="Save diagram (Ctrl-S)"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/zoomOut.png" border="0" width="22" height="22"/><span class="menuText">Zoom out</span></a>
             <?if($loggedUser->tutorial && isset($_REQUEST['diagramId']) && $_REQUEST['diagramId'] == 'quickstart'){?>                
                 <a style="padding: 6px; display: table-cell; color: #EF6329; background-color: #0288AE;" href="./common/controller.php?action=closeQuickStart">Schliesse Einführung</a>
             <?}?>
