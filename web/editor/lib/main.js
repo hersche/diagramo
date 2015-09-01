@@ -48,64 +48,83 @@ var DIAGRAMO = {
 var zoom = 1;
 function zoomIn(){
     if(zoom<0.9){
+        redraw = true;
         zoom = zoom + 0.1;
     }
     var canvas = document.getElementById('a');
-    canvas.style='transform: scale('+zoom+');';
+   if (navigator.userAgent.indexOf('Firefox') != -1 && parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf('Firefox') + 8)) >= 3.6){//Firefox
+        canvas.style='transform: scale('+zoom+');';
+    } else {
+        // canvas.style.transform = 'scale('+zoom+');';
+        canvas.setAttribute('style', 'transform: scale('+zoom+');');
+    }
 var content = document.getElementById('content');
     // content.style='width: '+canvas.width*zoom+'; height: '+canvas.height*zoom+';';
     var context = canvas.getContext("2d");
     var oldImageData=context.getImageData(0,0,canvas.height,canvas.width);
-    context.clearRect(0, 0, canvas.width*zoom, canvas.height*zoom);
+    context.clearRect(0, 0, canvas.width, canvas.height);
     context.save();
         context.width=canvas.width*zoom;
     context.height=canvas.height*zoom;
     context.scale(zoom, zoom);
     context.putImageData(oldImageData,0,0);
     context.restore();
-
-    minimap.updateMinimap();
+    draw();
+    minimap.initMinimap();
     console.log('scale('+zoom+');');
 }
 
 function zoomOut(){
     if(zoom>0.1){
     zoom = zoom - 0.1;
+        redraw = true;
     }
 var canvas = document.getElementById('a');
         var context = canvas.getContext("2d");
     var oldImageData=context.getImageData(0,0,canvas.height,canvas.width);
-    context.clearRect(0, 0, canvas.width*zoom, canvas.height*zoom);
+    context.clearRect(0, 0, canvas.width, canvas.height);
     context.save();
         context.width=canvas.width*zoom;
     context.height=canvas.height*zoom;
     context.scale(zoom, zoom);
-    context.putImageData(oldImageData,0,0);
-    context.restore();
+
     /*
    var content = document.getElementById('container'); 
     content.width=content.width*zoom;
     content.height=content.height*zoom;
     */
-    canvas.style='transform: scale('+zoom+');';
-    minimap.updateMinimap();
+       if (navigator.userAgent.indexOf('Firefox') != -1 && parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf('Firefox') + 8)) >= 3.6){//Firefox
+        canvas.style='transform: scale('+zoom+');';
+    } else {
+        canvas.setAttribute('style', 'transform: scale('+zoom+');');
+    }
+        context.putImageData(oldImageData,0,0);
+    context.restore();
+    draw();
+    minimap.initMinimap()
     console.log('scale('+zoom+');');
     
 }
 function zoomReset(){
     zoom = 1;
+    redraw = true;
 var canvas = document.getElementById('a');
     var context = canvas.getContext("2d");
     var oldImageData=context.getImageData(0,0,canvas.height,canvas.width);
-    context.clearRect(0, 0, canvas.width*zoom, canvas.height*zoom);
+    context.clearRect(0, 0, canvas.width, canvas.height);
     context.width=canvas.width*zoom;
     context.height=canvas.height*zoom;
     context.save();
     context.scale(zoom, zoom);
     context.putImageData(oldImageData,0,0);
     context.restore();
-    canvas.style='transform: scale('+zoom+');';
-    minimap.updateMinimap();
+       if (navigator.userAgent.indexOf('Firefox') != -1 && parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf('Firefox') + 8)) >= 3.6){//Firefox
+        canvas.style='transform: scale('+zoom+');';
+    } else {
+        canvas.setAttribute('style', 'transform: scale('+zoom+');');
+    }
+    minimap.initMinimap()
+    draw();
     console.log('scale('+zoom+');');
     
 }
